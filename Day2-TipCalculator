@@ -1,0 +1,16 @@
+print("Welcome to the tip calculator!")
+bill_total = float(input("What is the total bill? $"))
+tip_percent = int(input("What percentage tip would you like to give? 15, 20, or 25? "))
+num_split = int(input("How many people to split the bill? "))
+tip = 1 + (tip_percent/100) #this will be a float
+total = (bill_total * tip)
+each = (total / num_split)
+
+#each_pay = round(each, 2) but this wont give 2 places if 0 at end so...
+print(f"Each person should pay: ${each:.2f}") 
+
+#this will round and truncate to exactly 2 places
+##regardless of if the numbers are zero or not.
+##or you can do this:
+#each_pay = "{:.2f}".format(each)
+#print(each_pay)
